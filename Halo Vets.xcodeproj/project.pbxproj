@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F9640D492A8E58FB0031FDD6 /* Halo_VetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9640D482A8E58FB0031FDD6 /* Halo_VetsApp.swift */; };
-		F9640D4B2A8E58FB0031FDD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9640D4A2A8E58FB0031FDD6 /* ContentView.swift */; };
+		F9640D4B2A8E58FB0031FDD6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9640D4A2A8E58FB0031FDD6 /* MainView.swift */; };
 		F9640D4D2A8E58FC0031FDD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9640D4C2A8E58FC0031FDD6 /* Assets.xcassets */; };
 		F9640D502A8E58FC0031FDD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9640D4F2A8E58FC0031FDD6 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		F9640D452A8E58FB0031FDD6 /* Halo Vets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Halo Vets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9640D482A8E58FB0031FDD6 /* Halo_VetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Halo_VetsApp.swift; sourceTree = "<group>"; };
-		F9640D4A2A8E58FB0031FDD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F9640D4A2A8E58FB0031FDD6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F9640D4C2A8E58FC0031FDD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9640D4F2A8E58FC0031FDD6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F9640D512A8E58FC0031FDD6 /* Halo_Vets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Halo_Vets.entitlements; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				F9640D482A8E58FB0031FDD6 /* Halo_VetsApp.swift */,
-				F9640D4A2A8E58FB0031FDD6 /* ContentView.swift */,
+				F9640D4A2A8E58FB0031FDD6 /* MainView.swift */,
 				F9640D4C2A8E58FC0031FDD6 /* Assets.xcassets */,
 				F9640D512A8E58FC0031FDD6 /* Halo_Vets.entitlements */,
 				F9640D4E2A8E58FC0031FDD6 /* Preview Content */,
@@ -139,7 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9640D4B2A8E58FB0031FDD6 /* ContentView.swift in Sources */,
+				F9640D4B2A8E58FB0031FDD6 /* MainView.swift in Sources */,
 				F9640D492A8E58FB0031FDD6 /* Halo_VetsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

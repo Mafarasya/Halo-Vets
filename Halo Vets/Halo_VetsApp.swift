@@ -11,7 +11,7 @@ import SwiftUI
 struct Halo_VetsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }

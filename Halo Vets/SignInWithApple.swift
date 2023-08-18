@@ -31,6 +31,12 @@ struct SignInWithApple: View {
                 else {
                     // Signed In
                     Text("welcome back! \(firstName) \(lastName)")
+                    
+                    // Add sign-out button
+                    Button(action: signOut) {
+                        Text("Sign Out")
+                    }
+                    .padding()
                 }
                 
                 
@@ -38,6 +44,14 @@ struct SignInWithApple: View {
             
         }
         
+    }
+    
+    private func signOut() {
+        // Clear the stored user information
+        email = ""
+        firstName = ""
+        lastName = ""
+        userId = ""
     }
 }
 
@@ -91,6 +105,9 @@ struct SignInButtonView: View {
         }
     }
 }
+
+// Function to sign out
+
 
 struct SignInWithApple_Previews: PreviewProvider {
     static var previews: some View {

@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9371F2F2A926A7000C684CA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9371F2E2A926A7000C684CA /* SignInView.swift */; };
 		F9640D492A8E58FB0031FDD6 /* Halo_VetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9640D482A8E58FB0031FDD6 /* Halo_VetsApp.swift */; };
 		F9640D4B2A8E58FB0031FDD6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9640D4A2A8E58FB0031FDD6 /* MainView.swift */; };
 		F9640D4D2A8E58FC0031FDD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9640D4C2A8E58FC0031FDD6 /* Assets.xcassets */; };
 		F9640D502A8E58FC0031FDD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9640D4F2A8E58FC0031FDD6 /* Preview Assets.xcassets */; };
 		F9640D582A8E5BE40031FDD6 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9640D572A8E5BE40031FDD6 /* SignInWithApple.swift */; };
+		F9640D5B2A91E2530031FDD6 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9640D5A2A91E2530031FDD6 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F9371F2E2A926A7000C684CA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F9640D452A8E58FB0031FDD6 /* Halo Vets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Halo Vets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9640D482A8E58FB0031FDD6 /* Halo_VetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Halo_VetsApp.swift; sourceTree = "<group>"; };
 		F9640D4A2A8E58FB0031FDD6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		F9640D4F2A8E58FC0031FDD6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F9640D512A8E58FC0031FDD6 /* Halo_Vets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Halo_Vets.entitlements; sourceTree = "<group>"; };
 		F9640D572A8E5BE40031FDD6 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
+		F9640D5A2A91E2530031FDD6 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +58,8 @@
 		F9640D472A8E58FB0031FDD6 /* Halo Vets */ = {
 			isa = PBXGroup;
 			children = (
+				F9640D592A91C97B0031FDD6 /* View */,
 				F9640D482A8E58FB0031FDD6 /* Halo_VetsApp.swift */,
-				F9640D4A2A8E58FB0031FDD6 /* MainView.swift */,
 				F9640D572A8E5BE40031FDD6 /* SignInWithApple.swift */,
 				F9640D4C2A8E58FC0031FDD6 /* Assets.xcassets */,
 				F9640D512A8E58FC0031FDD6 /* Halo_Vets.entitlements */,
@@ -70,6 +74,16 @@
 				F9640D4F2A8E58FC0031FDD6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F9640D592A91C97B0031FDD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9640D4A2A8E58FB0031FDD6 /* MainView.swift */,
+				F9640D5A2A91E2530031FDD6 /* SignUpView.swift */,
+				F9371F2E2A926A7000C684CA /* SignInView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9640D5B2A91E2530031FDD6 /* SignUpView.swift in Sources */,
 				F9640D4B2A8E58FB0031FDD6 /* MainView.swift in Sources */,
 				F9640D582A8E5BE40031FDD6 /* SignInWithApple.swift in Sources */,
 				F9640D492A8E58FB0031FDD6 /* Halo_VetsApp.swift in Sources */,
+				F9371F2F2A926A7000C684CA /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,12 +19,13 @@ struct SignInWithApple: View {
     var body: some View {
         NavigationView {
             VStack {
-                
+                Text("Hello World!")
             }
-            
+
             // MARK: Sign In with Apple ID
             VStack {
-                
+                Text("Sign In")
+                    .font(.system(size: 18, weight: .semibold))
                 if userId.isEmpty {
                     SignInButtonView()
                 }
@@ -43,7 +44,6 @@ struct SignInWithApple: View {
             }
             
         }
-        
     }
     
     private func signOut() {

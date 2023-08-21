@@ -20,53 +20,56 @@ struct SignUpView: View {
                 Text("Hello World")
             }
         } detail: {
-            VStack {
-                        Text("Sign Up")
-                            .font(.largeTitle)
-                            .padding()
+            VStack(alignment: .leading) {
+                Text("Create Account")
+                    .font(.system(size: 32, weight: .bold))
+                    .foregroundColor(.black)
+                Text("Already have an account? Sign in")
+                    .font(.system(size: 14, weight: .medium))
+                
+                TextField("Full Name", text: $username)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
 
-                        TextField("Username", text: $username)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding()
-
-                        SecureField("Password", text: $password)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding()
-
-                        SecureField("Confirm Password", text: $confirmPassword)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding()
-
-                        Button(action: {
-                            // Perform validation and registration logic here.
-                            if isValidSignUp() {
-                                isRegistered = true
-                            }
-                        }) {
-                            Text("Sign Up")
-//                                .padding()
-//                                .background(Color.blue)
-//                                .foregroundColor(.white)
-//                                .cornerRadius(10)
-                        }
-                        .padding()
-
-                        NavigationLink(
-                            destination: SignInView(),
-                            isActive: $isRegistered,
-                            label: { Text("Already have an account? Sign In") }
-                        )
+                TextField("Email", text: $username)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                TextField("Phone Number", text: $username)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                SecureField("Password", text: $password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                SecureField("Confirm Password", text: $confirmPassword)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                Button(action: {
+                    // Perform validation and registration logic here.
+                    if isValidSignUp() {
+                        isRegistered = true
                     }
-                    .navigationTitle("Sign Up")
+                }) {
+                    Text("Create Account")
+                    //                                .padding()
+                    //                                .background(Color.blue)
+                    //                                .foregroundColor(.white)
+                    //                                .cornerRadius(10)
+                }
+                .padding()
+                
+                NavigationLink(
+                    destination: SignInView(),
+                    isActive: $isRegistered,
+                    label: { Text("Already have an account? Sign In") }
+                )
+            }
         }
         
     }
     
     private func isValidSignUp() -> Bool {
-            // Implement validation logic here.
-            // For this example, we'll assume a simple validation.
-            return !username.isEmpty && password == confirmPassword
-        }
+        // Implement validation logic here.
+        // For this example, we'll assume a simple validation.
+        return !username.isEmpty && password == confirmPassword
+    }
 }
 
 struct SignUpView_Previews: PreviewProvider {

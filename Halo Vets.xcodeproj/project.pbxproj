@@ -39,6 +39,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F955CBBE2A931529007B771A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		F9640D3C2A8E58FB0031FDD6 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +86,7 @@
 		F9640D592A91C97B0031FDD6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F955CBBE2A931529007B771A /* Components */,
 				F9640D4A2A8E58FB0031FDD6 /* MainView.swift */,
 				F9640D5A2A91E2530031FDD6 /* SignUpView.swift */,
 				F9371F2E2A926A7000C684CA /* SignInView.swift */,

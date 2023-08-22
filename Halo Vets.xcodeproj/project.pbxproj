@@ -14,6 +14,7 @@
 		F9640D502A8E58FC0031FDD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9640D4F2A8E58FC0031FDD6 /* Preview Assets.xcassets */; };
 		F9640D582A8E5BE40031FDD6 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9640D572A8E5BE40031FDD6 /* SignInWithApple.swift */; };
 		F9640D5B2A91E2530031FDD6 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9640D5A2A91E2530031FDD6 /* SignUpView.swift */; };
+		F98E6B132A95035C001C1970 /* StatusPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E6B122A95035C001C1970 /* StatusPresent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F9640D512A8E58FC0031FDD6 /* Halo_Vets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Halo_Vets.entitlements; sourceTree = "<group>"; };
 		F9640D572A8E5BE40031FDD6 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		F9640D5A2A91E2530031FDD6 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		F98E6B122A95035C001C1970 /* StatusPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPresent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		F955CBBE2A931529007B771A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F98E6B122A95035C001C1970 /* StatusPresent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				F9640D5B2A91E2530031FDD6 /* SignUpView.swift in Sources */,
 				F9640D4B2A8E58FB0031FDD6 /* MainView.swift in Sources */,
 				F9640D582A8E5BE40031FDD6 /* SignInWithApple.swift in Sources */,
+				F98E6B132A95035C001C1970 /* StatusPresent.swift in Sources */,
 				F9640D492A8E58FB0031FDD6 /* Halo_VetsApp.swift in Sources */,
 				F9371F2F2A926A7000C684CA /* SignInView.swift in Sources */,
 			);

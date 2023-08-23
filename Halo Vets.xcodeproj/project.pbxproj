@@ -15,6 +15,7 @@
 		F9640D582A8E5BE40031FDD6 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9640D572A8E5BE40031FDD6 /* SignInWithApple.swift */; };
 		F9640D5B2A91E2530031FDD6 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9640D5A2A91E2530031FDD6 /* SignUpView.swift */; };
 		F98E6B132A95035C001C1970 /* StatusPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E6B122A95035C001C1970 /* StatusPresent.swift */; };
+		F98E6B172A95A6E4001C1970 /* ButtonComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E6B162A95A6E4001C1970 /* ButtonComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F9640D572A8E5BE40031FDD6 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		F9640D5A2A91E2530031FDD6 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		F98E6B122A95035C001C1970 /* StatusPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPresent.swift; sourceTree = "<group>"; };
+		F98E6B162A95A6E4001C1970 /* ButtonComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +46,7 @@
 		F955CBBE2A931529007B771A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				F98E6B122A95035C001C1970 /* StatusPresent.swift */,
+				F98E6B162A95A6E4001C1970 /* ButtonComponents.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -92,6 +94,7 @@
 				F955CBBE2A931529007B771A /* Components */,
 				F9640D4A2A8E58FB0031FDD6 /* MainView.swift */,
 				F9640D5A2A91E2530031FDD6 /* SignUpView.swift */,
+				F98E6B122A95035C001C1970 /* StatusPresent.swift */,
 				F9371F2E2A926A7000C684CA /* SignInView.swift */,
 			);
 			path = View;
@@ -169,6 +172,7 @@
 			files = (
 				F9640D5B2A91E2530031FDD6 /* SignUpView.swift in Sources */,
 				F9640D4B2A8E58FB0031FDD6 /* MainView.swift in Sources */,
+				F98E6B172A95A6E4001C1970 /* ButtonComponents.swift in Sources */,
 				F9640D582A8E5BE40031FDD6 /* SignInWithApple.swift in Sources */,
 				F98E6B132A95035C001C1970 /* StatusPresent.swift in Sources */,
 				F9640D492A8E58FB0031FDD6 /* Halo_VetsApp.swift in Sources */,

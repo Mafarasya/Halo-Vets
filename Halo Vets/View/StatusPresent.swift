@@ -15,7 +15,13 @@ struct StatusPresent: View {
     @State private var petBreathFreq: Int = 0
     @State private var petHeartRate: Int = 0
     
-    @State private var selected = 0
+    @State private var habitusSelected = 0
+    @State private var nutritionSelected = 0
+    @State private var bodySelected = 0
+    @State private var behaviourSelected = 0
+    @State private var postureSelected = 0
+    @State private var adaptionSelected = 0
+    @State private var AwarenessSelected = 0
 
     // formatter for decimal number
     let numberFormatter: NumberFormatter = {
@@ -178,6 +184,7 @@ struct StatusPresent: View {
                 
                 // MARK: Row 2
                 HStack {
+                    
                     // Habitus
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading) {
@@ -185,7 +192,7 @@ struct StatusPresent: View {
                                 .padding(.leading, 10)
                                 .fontWeight(.semibold)
                             
-                            Picker(selection: $selected, label: Text("")) {
+                            Picker(selection: $habitusSelected, label: Text("")) {
                                 Text("Straight Pine").tag(1)
                                 Text("Kyphosis").tag(2)
                                 Text("Lordosis").tag(3)
@@ -204,7 +211,7 @@ struct StatusPresent: View {
                             Text("Nutrition")
                                 .padding(.leading, 10)
                                 .fontWeight(.semibold)
-                            Picker(selection: $selected, label: Text("")) {
+                            Picker(selection: $nutritionSelected, label: Text("")) {
                                 Text("Good").tag(1)
                                 Text("Enough").tag(2)
                                 Text("Bad").tag(3)
@@ -222,9 +229,9 @@ struct StatusPresent: View {
                             Text("Body Growth")
                                 .padding(.leading, 10)
                                 .fontWeight(.semibold)
-                            Picker(selection: $selected, label: Text("")) {
-                                Text("Good").tag(1)
-                                Text("Bad").tag(2)
+                            Picker(selection: $bodySelected, label: Text("")) {
+                                    Text("Good").tag(1)
+                                    Text("Bad").tag(2)
                             }
                             .fontWeight(.medium)
                             .pickerStyle(.radioGroup)
@@ -252,7 +259,7 @@ struct StatusPresent: View {
                                 .padding(.leading, 10)
                                 .fontWeight(.semibold)
                             
-                            Picker(selection: $selected, label: Text("")) {
+                            Picker(selection: $behaviourSelected, label: Text("")) {
                                 Text("Tame").tag(1)
                                 Text("Wild").tag(2)
                             }
@@ -269,7 +276,7 @@ struct StatusPresent: View {
                             Text("Standing Posture")
                                 .padding(.leading, 10)
                                 .fontWeight(.semibold)
-                            Picker(selection: $selected, label: Text("")) {
+                            Picker(selection: $postureSelected, label: Text("")) {
                                 Text("Good").tag(1)
                                 Text("Bad").tag(2)
                             }
@@ -286,7 +293,7 @@ struct StatusPresent: View {
                             Text("Environment Adaption")
                                 .padding(.leading, 10)
                                 .fontWeight(.semibold)
-                            Picker(selection: $selected, label: Text("")) {
+                            Picker(selection: $AwarenessSelected, label: Text("")) {
                                 Text("Good").tag(1)
                                 Text("Less").tag(2)
                                 Text("Aggresive").tag(3)
@@ -303,10 +310,10 @@ struct StatusPresent: View {
                         
                         // Awareness Level
                         VStack (alignment: .leading) {
-                            Text("Environment Adaption")
+                            Text("Awareness Level")
                                 .padding(.leading, 10)
                                 .fontWeight(.semibold)
-                            Picker(selection: $selected, label: Text("")) {
+                            Picker(selection: $AwarenessSelected, label: Text("")) {
                                 Text("Alert").tag(1)
                                 Text("Responsive to pain").tag(2)
                                 Text("Responsive to Voice").tag(3)
@@ -330,13 +337,18 @@ struct StatusPresent: View {
                 .padding(.top)
             }
             .padding()
+            
+            ButtonComponents()
+
 
         }
         .frame(minWidth: 300, idealWidth: 400, maxWidth: .infinity, minHeight: 200, idealHeight: 400, maxHeight: .infinity)
 
         .background(Color("db-bg-color"))
 
+
     }
+    
 }
 
 
@@ -353,6 +365,26 @@ struct StatusPresent: View {
 //        ).padding()
 //    }
 //}
+
+
+struct RadioButtonView: View {
+    var index: Int
+    @Binding var selectedOption: Int
+    var body: some View {
+        Button(action: {
+            selectedOption = index
+        }) {
+            HStack {
+                Image(systemName: self.selectedOption == self.index ? "circle.circle.fill" : "circle")
+                    .resizable()
+                    .frame(width: 28, height: 28)
+                    .foregroundColor(self.selectedOption == self.index ? .black: .brown)
+                
+                Text("Option \(index)")
+            }
+        }
+    }
+}
 
 struct StatusPresent_Previews: PreviewProvider {
     static var previews: some View {

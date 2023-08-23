@@ -6,31 +6,29 @@
 //
 
 import SwiftUI
-
 struct ButtonComponents: View {
+    var title: String
+//    @State private var isPressed = false
+
     var body: some View {
-        HStack {
-            Button {
-                print("Button tapped!")
-            } label: {
-                Text("Continue")
-                    .frame(maxWidth: 700)
-//                    .padding()
-                    .foregroundColor(.white)
-                    .font(.system(size: 16, weight: .semibold))
-                    .background(Image("button"))
-            }
-            .buttonBorderShape(.roundedRectangle)
+        ZStack {
+            Image("button-active")
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: 700, maxHeight: 52)
+//                .scaleEffect(isPressed ? 0.95 : 1.0) // Mengubah skala saat tombol ditekan
+            
+            Text(title)
+                .foregroundColor(.white)
+                .font(.system(size: 16, weight: .semibold))
         }
-        .frame(width: 700)
-        
-        
         
     }
 }
 
+
 struct ButtonComponents_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonComponents()
+        ButtonComponents(title: "Continue")
     }
 }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "pet-identity-card 2.png",
+      "filename" : "button-inactive.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "pet-identity-card 1.png",
+      "filename" : "button-inactive 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "pet-identity-card.png",
+      "filename" : "button-inactive 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

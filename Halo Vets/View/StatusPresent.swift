@@ -9,26 +9,31 @@ import SwiftUI
 
 struct StatusPresent: View {
     // MARK: Variable for Pets
-    @State private var petWeight : Float = 0.0
-    @State private var petTemperature : Float = 0.0
+    @State private var petWeight : Int = 0
+    @State private var petTemperature : Int = 0
     @State private var petPulseFreq: Int = 0
     @State private var petBreathFreq: Int = 0
     @State private var petHeartRate: Int = 0
     
-    @State private var habitusSelected = 0
-    @State private var nutritionSelected = 0
-    @State private var bodySelected = 0
-    @State private var behaviourSelected = 0
-    @State private var postureSelected = 0
-    @State private var adaptionSelected = 0
-    @State private var AwarenessSelected = 0
-
+    @State private var habitusSelected = 10
+    @State private var nutritionSelected = 10
+    @State private var bodySelected = 10
+    @State private var behaviourSelected = 10
+    @State private var postureSelected = 10
+    @State private var adaptionSelected = 10
+    @State private var AwarenessSelected = 10
+    
+    @State private var selectedOption: Int = 1 // Inisialisasi dengan opsi yang dipilih
+    
+    @State private var clicked = 0
+    
+    
     // formatter for decimal number
-    let numberFormatter: NumberFormatter = {
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .decimal
-            return formatter
-        }()
+    //    let numberFormatter: NumberFormatter = {
+    //            let formatter = NumberFormatter()
+    //            formatter.numberStyle = .decimal
+    //            return formatter
+    //        }()
     
     var body: some View {
         ScrollView {
@@ -38,9 +43,9 @@ struct StatusPresent: View {
                         .font(.system(size: 24, weight: .bold))
                 }
                 
-                Image(systemName: "creditcard.fill")
-                    .font(.system(size: 200))
-                    .foregroundColor(.green)
+                PetIdentityCard(species: "Cat", race: "Anggora", gender: "Male", birthDate: "19/08/2021", age: "29", weight: "19", vaccine: "Complete", petName: "Kepin", petProfileImage: "pet-profile")
+                    .padding(30)
+                
                 
                 // MARK: Row 1
                 VStack(alignment: .leading) {
@@ -50,15 +55,29 @@ struct StatusPresent: View {
                             // Weight
                             VStack(alignment: .leading) {
                                 Text("Weight (Kg)")
-                                    .font(.system(size: 16, weight: .semibold))
+                                    .fontWeight(.semibold)
                                 
                                 TextField(
                                     "ex: 17 kg",
                                     value: $petWeight,
-                                    formatter: numberFormatter
+                                    format: .number
                                 )
+//                                Picker("", selection: $petWeight){
+//                                    ForEach(1...100, id: \.self) { //<-
+//                                        Text("\($0) x / minutes")
+//                                    }
+//                                }
+//                                .offset(x: -7)
                                 .textFieldStyle(.roundedBorder)
                                 .frame(maxWidth: 619)
+                                
+//                                Picker("", selection: $petWeight){
+//                                    ForEach(1...100, id: \.self) { //<-
+//                                        Text("\($0) x / minutes")
+//                                    }
+//                                }
+
+                                
                             }
                             .padding(5)
                             
@@ -68,31 +87,35 @@ struct StatusPresent: View {
                                     .font(.system(size: 16, weight: .semibold))
                                 
                                 HStack {
+                                    
                                     TextField(
                                         "ex: 17 kg",
                                         value: $petPulseFreq,
-                                        formatter: numberFormatter
+                                        format: .number
                                     )
+                                    .foregroundColor(.black)
                                     .textFieldStyle(.roundedBorder)
                                     .frame(maxWidth: 482)
+                                    
+                                    
                                     Text("x / minutes")
                                         .font(.system(size: 16, weight: .semibold))
                                         .padding(.horizontal)
                                 }
                             }
                             .padding(5)
-
+                            
                             
                             // Heart Rate
                             VStack(alignment: .leading) {
                                 Text("Heart Rate ")
                                     .font(.system(size: 16, weight: .semibold))
-                            
+                                
                                 HStack {
                                     TextField(
                                         "ex: 4 x / minutes",
                                         value: $petHeartRate,
-                                        formatter: numberFormatter
+                                        format: .number
                                     )
                                     .textFieldStyle(.roundedBorder)
                                     .frame(maxWidth: 482)
@@ -103,7 +126,7 @@ struct StatusPresent: View {
                             }
                             .padding(5)
                             
-
+                            
                         }
                         
                         // Column Tempt & Breath
@@ -116,13 +139,13 @@ struct StatusPresent: View {
                                 TextField(
                                     "ex: 17 kg",
                                     value: $petWeight,
-                                    formatter: numberFormatter
+                                    format: .number
                                 )
                                 .textFieldStyle(.roundedBorder)
                                 .frame(maxWidth: 619)
                             }
                             .padding(5)
-                                                
+                            
                             // Breath Frequency
                             VStack(alignment: .leading) {
                                 Text("Breath Frequency ")
@@ -132,7 +155,7 @@ struct StatusPresent: View {
                                     TextField(
                                         "ex: 17 kg",
                                         value: $petWeight,
-                                        formatter: numberFormatter
+                                        format: .number
                                     )
                                     .textFieldStyle(.roundedBorder)
                                     .frame(maxWidth: 482)
@@ -153,28 +176,29 @@ struct StatusPresent: View {
                         
                     }
                     
-
-                        // Heart Rate
-//                        VStack(alignment: .leading) {
-//                            Text("Heart Rate ")
-//                                .font(.system(size: 16, weight: .semibold))
-//
-//                            HStack {
-//                                TextField(
-//                                    "ex: 4 x / minutes",
-//                                    value: $petHeartRate,
-//                                    formatter: numberFormatter
-//                                )
-//                                .textFieldStyle(.roundedBorder)
-//                                .frame(maxWidth: 482)
-//                                Text("x / minutes")
-//                                    .font(.system(size: 16, weight: .semibold))
-//                                    .padding(.horizontal)
-//                            }
-//                        }
-//                        .padding(5)
+                    
+                    // Heart Rate
+                    //                        VStack(alignment: .leading) {
+                    //                            Text("Heart Rate ")
+                    //                                .font(.system(size: 16, weight: .semibold))
+                    //
+                    //                            HStack {
+                    //                                TextField(
+                    //                                    "ex: 4 x / minutes",
+                    //                                    value: $petHeartRate,
+                    //                                    formatter: numberFormatter
+                    //                                )
+                    //                                .textFieldStyle(.roundedBorder)
+                    //                                .frame(maxWidth: 482)
+                    //                                Text("x / minutes")
+                    //                                    .font(.system(size: 16, weight: .semibold))
+                    //                                    .padding(.horizontal)
+                    //                            }
+                    //                        }
+                    //                        .padding(5)
                     
                 }
+                .font(.system(size: 16))
                 .padding()
                 .frame(maxWidth: 1338)
                 .padding(.vertical)
@@ -184,64 +208,18 @@ struct StatusPresent: View {
                 
                 // MARK: Row 2
                 HStack {
-                    
-                    // Habitus
                     VStack(alignment: .leading) {
-                        VStack(alignment: .leading) {
-                            Text("Habitus")
-                                .padding(.leading, 10)
-                                .fontWeight(.semibold)
-                            
-                            Picker(selection: $habitusSelected, label: Text("")) {
-                                Text("Straight Pine").tag(1)
-                                Text("Kyphosis").tag(2)
-                                Text("Lordosis").tag(3)
-                                Text("Scolliosis").tag(4)
-                            }
-                            .fontWeight(.medium)
-                            .pickerStyle(.radioGroup)
-                            .horizontalRadioGroupLayout()
-                            .padding(.top, 5)
-                        }
-                        .font(.system(size: 16))
-                        .padding(12)
+                        // Habitus
+                        RadioButton(title: "Habitus", options: ["Straight Pine", "Kyphosis", "Lordosis", "Scolliosis"], selectedOption: $habitusSelected)
                         
                         // Nutrition
-                        VStack (alignment: .leading) {
-                            Text("Nutrition")
-                                .padding(.leading, 10)
-                                .fontWeight(.semibold)
-                            Picker(selection: $nutritionSelected, label: Text("")) {
-                                Text("Good").tag(1)
-                                Text("Enough").tag(2)
-                                Text("Bad").tag(3)
-                            }
-                            .fontWeight(.medium)
-                            .pickerStyle(.radioGroup)
-                            .horizontalRadioGroupLayout()
-                            .padding(.top, 5)
-                        }
-                        .font(.system(size: 16))
-                        .padding(12)
+                        RadioButton(title: "Nutrition", options: ["Good", "Enough", "Bad"], selectedOption: $nutritionSelected)
                         
                         // Body Growth
-                        VStack (alignment: .leading) {
-                            Text("Body Growth")
-                                .padding(.leading, 10)
-                                .fontWeight(.semibold)
-                            Picker(selection: $bodySelected, label: Text("")) {
-                                    Text("Good").tag(1)
-                                    Text("Bad").tag(2)
-                            }
-                            .fontWeight(.medium)
-                            .pickerStyle(.radioGroup)
-                            .horizontalRadioGroupLayout()
-                            .padding(.top, 5)
-                        }
-                        .font(.system(size: 16))
-                        .padding(12)
+                        RadioButton(title: "Body Growth", options: ["Good", "Bad"], selectedOption: $bodySelected)
                         
                     }
+                    
                     Spacer()
                 }
                 .padding()
@@ -252,82 +230,22 @@ struct StatusPresent: View {
                 
                 // MARK: Row 3
                 HStack {
-                    // Behavior
                     VStack(alignment: .leading) {
-                        VStack(alignment: .leading) {
-                            Text("Behavior")
-                                .padding(.leading, 10)
-                                .fontWeight(.semibold)
-                            
-                            Picker(selection: $behaviourSelected, label: Text("")) {
-                                Text("Tame").tag(1)
-                                Text("Wild").tag(2)
-                            }
-                            .fontWeight(.medium)
-                            .pickerStyle(.radioGroup)
-                            .horizontalRadioGroupLayout()
-                            .padding(.top, 5)
-                        }
-                        .font(.system(size: 16))
-                        .padding(12)
+                        // Behavior
+                        RadioButton(title: "Behavior", options: ["Tame", "Wild"], selectedOption: $behaviourSelected)
                         
                         // Standing Posture
-                        VStack (alignment: .leading) {
-                            Text("Standing Posture")
-                                .padding(.leading, 10)
-                                .fontWeight(.semibold)
-                            Picker(selection: $postureSelected, label: Text("")) {
-                                Text("Good").tag(1)
-                                Text("Bad").tag(2)
-                            }
-                            .fontWeight(.medium)
-                            .pickerStyle(.radioGroup)
-                            .horizontalRadioGroupLayout()
-                            .padding(.top, 5)
-                        }
-                        .font(.system(size: 16))
-                        .padding(12)
+                        RadioButton(title: "Standing Posture", options: ["Good", "Bad"], selectedOption: $postureSelected)
                         
                         // Environment Adaption
-                        VStack (alignment: .leading) {
-                            Text("Environment Adaption")
-                                .padding(.leading, 10)
-                                .fontWeight(.semibold)
-                            Picker(selection: $AwarenessSelected, label: Text("")) {
-                                Text("Good").tag(1)
-                                Text("Less").tag(2)
-                                Text("Aggresive").tag(3)
-                                Text("Affraid").tag(4)
-                                Text("Stressed").tag(5)
-                            }
-                            .fontWeight(.medium)
-                            .pickerStyle(.radioGroup)
-                            .horizontalRadioGroupLayout()
-                            .padding(.top, 5)
-                        }
-                        .font(.system(size: 16))
-                        .padding(12)
+                        RadioButton(title: "Environment Adaption", options: ["Good", "Less", "Aggressive", "Afraid"], selectedOption: $adaptionSelected)
                         
                         // Awareness Level
-                        VStack (alignment: .leading) {
-                            Text("Awareness Level")
-                                .padding(.leading, 10)
-                                .fontWeight(.semibold)
-                            Picker(selection: $AwarenessSelected, label: Text("")) {
-                                Text("Alert").tag(1)
-                                Text("Responsive to pain").tag(2)
-                                Text("Responsive to Voice").tag(3)
-                                Text("Unresponsive").tag(4)
-                            }
-                            .fontWeight(.medium)
-                            .pickerStyle(.radioGroup)
-                            .horizontalRadioGroupLayout()
-                            .padding(.top, 5)
-                        }
-                        .font(.system(size: 16))
-                        .padding(12)
+                        RadioButton(title: "Awareness Level", options: ["Alert", "Responsive to pain", "Responsive to voice", "Unresponsive"], selectedOption: $AwarenessSelected)
+                        
                         
                     }
+                    
                     Spacer()
                 }
                 .padding()
@@ -338,59 +256,30 @@ struct StatusPresent: View {
             }
             .padding()
             
-            ButtonComponents()
-
-
+            ButtonComponents(title: "Continue")
+                .onTapGesture {
+                    // action
+                    clicked = clicked + 1
+                    // test
+                    print("Clicked \(clicked) time")
+                }
+            
+            
         }
         .frame(minWidth: 300, idealWidth: 400, maxWidth: .infinity, minHeight: 200, idealHeight: 400, maxHeight: .infinity)
-
+        
         .background(Color("db-bg-color"))
-
-
+        
+        
     }
     
-}
-
-
-// MARK: Textfield ViewModifier
-// to customize the textfield height
-//
-//struct MyTextFieldStyle: TextFieldStyle {
-//    func _body(configuration: TextField<Self._Label>) -> some View {
-//        configuration
-//        .padding(30)
-//        .background(.white)
-//        .background(
-//            RoundedRectangle(cornerRadius: 6, style: .continuous)
-//        ).padding()
-//    }
-//}
-
-
-struct RadioButtonView: View {
-    var index: Int
-    @Binding var selectedOption: Int
-    var body: some View {
-        Button(action: {
-            selectedOption = index
-        }) {
-            HStack {
-                Image(systemName: self.selectedOption == self.index ? "circle.circle.fill" : "circle")
-                    .resizable()
-                    .frame(width: 28, height: 28)
-                    .foregroundColor(self.selectedOption == self.index ? .black: .brown)
-                
-                Text("Option \(index)")
-            }
-        }
-    }
 }
 
 struct StatusPresent_Previews: PreviewProvider {
     static var previews: some View {
         StatusPresent()
             .frame(width: 1512, height: 2040) // Adjust the frame size as needed for your macOS app
-
+        
     }
 }
 

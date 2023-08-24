@@ -263,6 +263,7 @@ struct StatusPresent: View {
                     // test
                     print("Clicked \(clicked) time")
                 }
+                .padding(.top, 40)
             
             
         }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View{
+struct DashboardView: View{
     
     var body: some View{
         VStack{
@@ -82,8 +82,8 @@ struct MainView: View{
     }
     
 }
-struct MainView_Previews: PreviewProvider {
+struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        DashboardView()
     }
 }

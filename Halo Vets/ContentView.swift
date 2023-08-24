@@ -14,7 +14,7 @@ struct ContentView: View {
             ListView()
         }detail:{
             
-            MainView()
+            DashboardView()
         }
     }
 }
